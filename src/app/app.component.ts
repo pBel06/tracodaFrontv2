@@ -45,6 +45,7 @@ consultarArchivoMes(){
     next: respxSol => {
       //this.pdf.push(respxSol.contenido);
       this.pdf = respxSol.contenido;
+      console.log("Los mostramos . ..");
 
 /*
       return this._http
