@@ -310,6 +310,12 @@
     <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
     <span id="text">Mes: {{mes}}</span>
   </div>
+
+  <h3 class="first">Consulta de archivos</h3>
+  <div class="col s12">
+    <!-- <pdf-viewer [src]="pdf" [original-size]="true" [show-all]="true"></pdf-viewer> -->
+    <pdf-viewer  [src]="pdf"></pdf-viewer>
+  </div>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
