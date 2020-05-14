@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClientModule, HttpErrorResponse, HttpClient, HttpHeaders} from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
+import { IFile } from './Files.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
-  export class CargaArchivoService{
+  export class ArchivoService{
     private solicitudUrlBase = 'https://codersservice.herokuapp.com/tracoda';
 
     constructor(private http: HttpClient){}
@@ -18,6 +19,20 @@ import {catchError, tap} from 'rxjs/operators';
             tap(data => console.log('Archivo guardado: ' +JSON.stringify(data))),
             catchError(this.handleError)
         );
+    }
+
+    consultarArchivoMes(valorMes: string): Observable<IFile>{
+      console.log("Consultaremos los archivos por mes.... ");
+      const httpOptions = {
+        headers: {'Content-Type': 'application/json'},
+        params: {mes: valorMes}
+      };
+      return this.http.get<IFile>(this.solicitudUrlBase+'/rest/solicitud/archivo/mes',httpOptions).pipe(
+        tap(data => {
+          console.log('Solicitud consultada: ' + JSON.stringify(data));
+        }),
+        catchError(this.handleError)
+      );
     }
   
     private handleError(err: HttpErrorResponse){

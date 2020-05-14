@@ -297,20 +297,17 @@
 
 
 <div class="content" role="main">
-
+<h3>Carga de Archvivos</h3>
   <div class="col s12">
     <h5>Seleccionar foto</h5>
-    <!-- <p-fileUpload name="myfile[]" url="C:\Proyectos\original\aseguradora\aseguradora\src\app\upload" withCredentials="false" customUpload="true" (uploadHandler)="addHeaders($event)" method="POST" multiple="multiple" accept="image/*">
-        <ng-template pTemplate="content">
-            <ul *ngIf="uploadedFiles.length">
-                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-            </ul>
-        </ng-template></p-fileUpload> -->
     <input id="file-upload" type="file" (change)="fileSelected($event)"/>
     <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="subirArchivo()">Guardar Foto</button>
-   <!-- <button type="button" class="btn btn-success" (click)="subirArchivo()"> Subir imagen </button> -->     
 </div>
 
+<h3 class="first">Consulta de archivos</h3>
+<input id="input" type="text" size="30" pInputText [(ngModel)]="mes">
+<button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
+<span id="text">Mes: {{mes}}</span>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

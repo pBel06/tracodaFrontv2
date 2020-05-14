@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CargaArchivoService } from './cargaArchivo/cargaArchivo.service';
+import { ArchivoService } from './archivo/archivo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import { CargaArchivoService } from './cargaArchivo/cargaArchivo.service';
 export class AppComponent {
   title = 'tracodaFrontv2';
   selectedFile: File = null;
+  mes: string;
 
-
-  constructor(private carga:CargaArchivoService){}
+  constructor(private archivoService:ArchivoService){}
   ngOnInit(){
     console.log("cargando pagina ---")
   }
@@ -26,7 +26,7 @@ export class AppComponent {
     const dr = new FormData();
       dr.append('dr', this.selectedFile);
 
-      this.carga.guardarArchivo(dr).subscribe({
+      this.archivoService.guardarArchivo(dr).subscribe({
         next: respxSol => {
             /*this.msgs = [];
             this.msgs.push({severity:'success', summary:'Foto guardada', detail:''});
@@ -37,4 +37,20 @@ export class AppComponent {
         }
     });
 }
+consultarArchivoMes(){
+  console.log("Consultando mes ..." + this.mes );
+  this.archivoService.consultarArchivoMes(this.mes).subscribe({
+    next: respxSol => {
+        /*this.msgs = [];
+        this.msgs.push({severity:'success', summary:'Foto guardada', detail:''});
+        this.alertService.success("Se ha guardado la foto");
+        setTimeout(() => {}, 3000);
+        this.onBack();*/
+        console.log("Consultamos los archivos ");
+      }
+  });
+}
+
+
+
 }
