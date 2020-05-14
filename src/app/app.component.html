@@ -304,10 +304,12 @@
     <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="subirArchivo()">Guardar Foto</button>
 </div>
 
-<h3 class="first">Consulta de archivos</h3>
-<input id="input" type="text" size="30" pInputText [(ngModel)]="mes">
-<button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
-<span id="text">Mes: {{mes}}</span>
+<div class="col s12">
+  <h3 class="first">Consulta de archivos</h3>
+  <input id="input" type="text" size="30" pInputText [(ngModel)]="mes">
+  <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
+  <span id="text">Mes: {{mes}}</span>
+</div>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
