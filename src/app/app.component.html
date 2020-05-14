@@ -297,19 +297,19 @@
 
 
 <div class="content" role="main">
-<h3>Carga de Archvivos</h3>
+  <h3>Carga de Archvivos</h3>
   <div class="col s12">
     <h5>Seleccionar foto</h5>
     <input id="file-upload" type="file" (change)="fileSelected($event)"/>
     <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="subirArchivo()">Guardar Foto</button>
-</div>
+  </div>
 
-<div class="col s12">
   <h3 class="first">Consulta de archivos</h3>
-  <input id="input" type="text" size="30" pInputText [(ngModel)]="mes">
-  <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
-  <span id="text">Mes: {{mes}}</span>
-</div>
+  <div class="col s12">
+    <input id="input" type="text" size="30" pInputText [(ngModel)]="mes">
+    <button class="button" style="display:inline-block;padding: 20px;margin:20px;" type="submit" (click)="consultarArchivoMes()">Consultar Mes</button>
+    <span id="text">Mes: {{mes}}</span>
+  </div>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
