@@ -3,5 +3,5 @@ export interface IFile{
     nombre:string,
     anio:number,
     mes:number,
-    contenido:Uint8Array 
+    contenido:string 
 }

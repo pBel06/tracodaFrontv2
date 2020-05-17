@@ -43,9 +43,9 @@ consultarArchivoMes(){
   console.log("Consultando mes ..." + this.mes );
   this.archivoService.consultarArchivoMes(this.mes).subscribe({
     next: respxSol => {
-      //this.pdf.push(respxSol.contenido);
-      this.pdf = respxSol.contenido;
-      console.log("Los mostramos . ..");
+      //this.pdf = respxSol.contenido;
+
+      console.log("Los mostramos . .." + JSON.stringify(respxSol));
 
 /*
       return this._http
