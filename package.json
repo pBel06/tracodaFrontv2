@@ -28,7 +28,7 @@
     "@angular/router": "~8.2.8",
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ng2-pdf-viewer": "^6.3.0",
     "path": "^0.12.7",
     "primeicons": "^3.0.0-rc.1",
